@@ -1,6 +1,8 @@
-export PATH="./bin:$HOME/bin/:/bin:/sbin:/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/X11/bin:$HOME/.bash_config/scripts:$PATH"
+export PATH=".:./bin:$HOME/bin/:/bin:/sbin:/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/X11/bin:$HOME/.bash_config/scripts:$PATH"
 export INSTALL_DIR="$HOME/local"
 export EDITOR=vim
+
+export NETWORK_INTERFACE="eth1"
 
 export SVN_EDITOR="/usr/bin/vim"
 

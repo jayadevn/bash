@@ -1,3 +1,11 @@
+# cd to dirname(file)
+ function ffcd()
+ {
+     if [ $1 ]; then
+         cd $(dirname $1)
+     fi
+ }
+
 # reload source
 reload() {
     source ~/.bashrc;

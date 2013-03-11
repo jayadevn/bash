@@ -14,6 +14,13 @@ alias -- -='cd -'        # Go back
 
 alias psgrep="ps aux | egrep -v egrep | egrep"
 
+
+# SVN Alias
+alias svngrep="find ./ -not -path \"*.svn*\" -a -not -iname \"*.svn-*\"  | xargs grep $*"
+alias svnhead="svn diff -r head $*"
+alias svnignore="svn up . --non-recursive; svn propset svn:ignore -F .svnignore .;  svn ci -m "svnignore" . --non-recursive"
+
+
 # Shell History
 alias h='history'
 

@@ -66,6 +66,18 @@ if [ $? -eq 0 ]; then
     }
 fi
 
+date() {
+  case $1 in
+    -R|--rfc-822)
+      # Output RFC-822 compliant date string.
+      # e.g. Wed, 16 Dec 2009 15:18:11 +0100
+      command date '+"%Y-%m-%d %H:%M:%S"' ;;
+    -g)
+      command date '+%Y%m%d' ;;
+    *)
+      command date "$@" ;;
+  esac
+}
 
 # Syntax-highlight JSON strings or files
 # Usage: `json '{"foo":42}'` or `echo '{"foo":42}' | json`
@@ -76,4 +88,5 @@ function json() {
         python -mjson.tool | pygmentize -l javascript
     fi
 }
+
 

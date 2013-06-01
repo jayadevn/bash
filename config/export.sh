@@ -33,3 +33,10 @@ export LESS_TERMCAP_us=$'\E[00;32m'
 #export EC2_AMI_HOME="$EC2_HOME/ec2-ami-tools"
 #export PATH="$EC2_HOME/bin:$EC2_AMI_HOME/bin:$PATH"
 #export JAVA_HOME="/Library/Java/Home"
+
+FILES=$HOME/.bash_config/path.d/*
+for f in $FILES
+do 
+	source $f
+done
+

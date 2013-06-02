@@ -1,3 +1,2 @@
-
-
+# vi ft=bash
 PATH="$PATH:$HOME/workspace/bash/scripts/"

@@ -1,2 +1,2 @@
-# vi: ft=bash
+# vi ft=bash
 export PATH="$PATH:/usr/local/cloud9/bin"

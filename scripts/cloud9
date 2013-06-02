@@ -1,0 +1,62 @@
+#!/bin/bash
+# vi ft=bash
+
+C9_BIN=/usr/local/cloud9/bin/cloud9.sh
+BROWSER=`which google-chrome` || `which chromium-browser`
+
+
+HOST=localhost
+ROOT="-w $PWD"
+BIND=""
+P="3131"
+NVM='0.8'
+
+if [[ -s /usr/local/nvm/nvm.sh ]]; then
+    source /usr/local/nvm/nvm.sh # This loads NVM
+fi
+
+while getopts n:p:w:l: option
+do
+        case "${option}"
+        in
+                n) NVM="${OPTARG}";;
+                p) P=${OPTARG}; PORT=" -p ${OPTARG}";;
+                w) R=${OPTARG}; ROOT=" -w ${OPTARG}";;
+                l) BIND=" -l ${OPTARG}";;
+                h) HOST="${OPTARG}";;
+        esac
+done
+
+COMMAND="$C9_BIN $ROOT $BIND $PORT"
+
+browser() {
+    sleep 3
+    $BROWSER --app=http://$HOST:$P &>/dev/null
+}
+
+start() {
+    $COMMAND &>/dev/null
+}
+
+nvm use $NVM 
+echo "Launching Cloud9 to directory $R binded to $HOST:$P... "
+browser &  start &
+echo "done"
+echo
+
+# MYPID="/tmp/cloud9_$(md5sum<<<"$COMMAND" | cut -d ' ' -f 1)"
+# 
+# if [[ -f $MYPID ]];
+# then
+#     echo "Stoping..."
+#     PAR_PID=$(ps af -ef | grep "`cat $MYPID`"  | awk '{print $2}')
+#     echo "parent: " $PAR_PID
+#     for pid in $(ps af -ef | awk '$3 == '${PAR_PID}' {print $2}' ); do
+#         [[ ! "$pid" == "1" ]] && kill -9 $pid
+#     done
+# 
+#     rm $MYPID
+# fi
+# 
+# echo $COMMAND > $MYPID
+# 

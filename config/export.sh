@@ -40,3 +40,4 @@ do
 	source $f
 done
 
+export WORKSPACE="$HOME/workspace"

@@ -3,7 +3,7 @@ alias _='sudo'
 alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
-alias ws='cd /home/workspace'
+alias ws='cd $WORKSPACE'
 alias myip='curl ifconfig.me'
 
 

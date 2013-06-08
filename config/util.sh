@@ -87,6 +87,10 @@ date() {
   esac
 }
 
+if [ -f /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh ]; then
+        source /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
+fi
+
 # Syntax-highlight JSON strings or files
 # Usage: `json '{"foo":42}'` or `echo '{"foo":42}' | json`
 function json() {
@@ -96,5 +100,4 @@ function json() {
         python -mjson.tool | pygmentize -l javascript
     fi
 }
-
 

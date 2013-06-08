@@ -14,6 +14,8 @@ alias -- -='cd -'        # Go back
 
 alias psgrep="ps aux | egrep -v egrep | egrep"
 
+alias localfn="declare -F |  grep -v  \"declare -f _\" | awk '{print \$3}'"
+
 
 # SVN Alias
 alias svngrep="find ./ -not -path \"*.svn*\" -a -not -iname \"*.svn-*\"  | xargs grep $*"

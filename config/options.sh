@@ -13,6 +13,7 @@ shopt -s histappend
 shopt -s globstar
 #shopt -s autocd
 #shopt -s dirspell
+shopt -s direxpand
 
 set -o ignoreeof
 set bell-style none

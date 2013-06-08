@@ -41,3 +41,4 @@ do
 done
 
 export WORKSPACE="$HOME/workspace"
+export WS="$HOME/workspace"

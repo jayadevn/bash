@@ -1,6 +1,6 @@
 # vi ft=sh
 
-if [ `estoy_en` = "@WORK" ]; then
+if [[ `estoy_en` = "@WORK" ]]; then
 
     export PATH="$PATH:$HOME:/var/Desarrollo/scripts/"
 

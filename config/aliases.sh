@@ -13,6 +13,7 @@ alias ....='cd ../../..' # Go up two directories
 alias -- -='cd -'        # Go back
 
 alias psgrep="ps aux | egrep -v egrep | egrep"
+alias trabajo="source $HOME/trabajo"
 
 
 # SVN Alias

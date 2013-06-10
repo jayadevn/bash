@@ -134,6 +134,10 @@ extract () {
      fi
 }
 
+function estoy_en(){
+    echo $WHEREAMI;
+}
+
 # Syntax-highlight JSON strings or files
 # Usage: `json '{"foo":42}'` or `echo '{"foo":42}' | json`
 function json() {

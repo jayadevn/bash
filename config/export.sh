@@ -40,4 +40,10 @@ do
 	source $f
 done
 
+for f in $HOME/.bash_config/completion.d/*
+do 
+	source $f
+done
+
 export WORKSPACE="$HOME/workspace"
+export WS="$HOME/workspace"

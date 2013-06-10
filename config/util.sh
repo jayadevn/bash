@@ -87,6 +87,53 @@ date() {
   esac
 }
 
+#if [ -f /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh ]; then
+        #source /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
+#fi
+
+if [ -f /usr/local/lib/powerline-shell/powerline-shell.py ]; then
+    function _update_ps1() {
+        export PS1="$(/usr/local/lib/powerline-shell/powerline-shell.py $?)"
+    }
+
+    export PROMPT_COMMAND="_update_ps1"
+fi
+
+
+# go back x directories
+b() {
+    str=""
+    count=0
+    while [ "$count" -lt "$1" ];
+    do
+        str=$str"../"
+        let count=count+1
+    done
+    cd $str
+}
+
+# USEFUL ALIAS FOR EXTRACT KNOW ARCHIVES
+extract () {
+    if [ -f $1 ] ; then
+      case $1 in
+        *.tar.bz2)   tar xjf $1     ;;
+        *.tar.gz)    tar xzf $1     ;;
+        *.bz2)       bunzip2 $1     ;;
+        *.rar)       unrar e $1     ;;
+        *.gz)        gunzip $1      ;;
+        *.tar)       tar xf $1      ;;
+        *.tbz2)      tar xjf $1     ;;
+        *.tgz)       tar xzf $1     ;;
+        *.zip)       unzip $1       ;;
+        *.Z)         uncompress $1  ;;
+        *.7z)        7z x $1        ;;
+        *)     echo "'$1' cannot be extracted via extract()" ;;
+         esac
+     else
+         echo "'$1' is not a valid file"
+     fi
+}
+
 # Syntax-highlight JSON strings or files
 # Usage: `json '{"foo":42}'` or `echo '{"foo":42}' | json`
 function json() {
@@ -96,5 +143,4 @@ function json() {
         python -mjson.tool | pygmentize -l javascript
     fi
 }
-
 

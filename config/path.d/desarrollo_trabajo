@@ -1,0 +1,28 @@
+# vi ft=sh
+
+if [ "@WORK" = "$WHEREAMI" ]; then
+
+    export PATH="$PATH:$HOME:/var/Desarrollo/scripts/"
+
+    alias sudo='A=`alias` sudo  '
+    alias suno="sudo -u nobody bash"
+    alias ll="ls -l -a --color"
+    alias comprimir="tar -czvf "
+    alias descomprimir="tar -xvvzf "
+    alias grep=" grep --color=auto"
+    alias phpfile="php -q"
+    alias proxyto="sudo iptables -t nat -A OUTPUT -p tcp --dport 80 -j DNAT --to"
+
+    medio="digitalplus"
+    raiz="/LOCAL"
+
+    export private="$raiz/private/$medio/class/php/YOMVIWEB/"
+    export public="$raiz/public/yomvi/html/webplayer/"
+    export publics="$raiz/public/yomvi/htmls/webplayer"
+    export comunes="$raiz/private/class/php/"
+    export conf="$raiz/conf/$medio/"
+    export editores="$raiz/private/$medio/html/editores/"
+    export estaticos="$raiz/public/$medio/static/"
+    export sesiones="/SESIONES/$medio"
+
+fi

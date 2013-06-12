@@ -34,6 +34,11 @@ export LESS_TERMCAP_us=$'\E[00;32m'
 #export PATH="$EC2_HOME/bin:$EC2_AMI_HOME/bin:$PATH"
 #export JAVA_HOME="/Library/Java/Home"
 
+
+function estoy_en(){
+    echo $WHEREAMI;
+}
+
 FILES=$HOME/.bash_config/path.d/*
 for f in $FILES
 do 

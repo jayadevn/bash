@@ -88,15 +88,15 @@ date() {
 }
 
 #if [ -f /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh ]; then
-        #source /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
+#        source /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
 #fi
 
-if [ -f /usr/local/lib/powerline-shell/powerline-shell.py ]; then
-    function _update_ps1() {
-        export PS1="$(/usr/local/lib/powerline-shell/powerline-shell.py $?)"
-    }
+if [[ -z $NOPOWERLINE && -f /usr/local/lib/powerline-shell/powerline-shell.py ]]; then
+   function _update_ps1() {
+       export PS1="$(/usr/local/lib/powerline-shell/powerline-shell.py $?)"
+   }
 
-    export PROMPT_COMMAND="_update_ps1"
+   export PROMPT_COMMAND="_update_ps1"
 fi
 
 
@@ -132,10 +132,6 @@ extract () {
      else
          echo "'$1' is not a valid file"
      fi
-}
-
-function estoy_en(){
-    echo $WHEREAMI;
 }
 
 # Syntax-highlight JSON strings or files

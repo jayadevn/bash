@@ -4,6 +4,8 @@ if [[ `estoy_en` = "@WORK" ]]; then
 
     export PATH="$PATH:$HOME:/var/Desarrollo/scripts/"
 
+    alias go="source go.sh"
+    alias jsy="go js && builtin cd yomvi"
     alias sudo='A=`alias` sudo  '
     alias suno="sudo -u nobody bash"
     alias ll="ls -l -a --color"
